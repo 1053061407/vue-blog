@@ -141,11 +141,12 @@ get: function getter () {
 从而把watcher添加到了订阅器中，也就解决了上面Dep.target是哪里来的这个问题。
 ## 3.实现一个Compile
 ![new SelfVue 绑定的dom节点](http://upload-images.jianshu.io/upload_images/3185709-32f0470de525fc28.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+
 Compile主要的作用是把new SelfVue 绑定的dom节点，（也就是el标签绑定的id）遍历该节点的所有子节点，找出其中所有的v-指令
 1.如果子节点含有v-指令，即是元素节点，则对这个元素添加监听事件。（如果是v-on，则node.addEventListener('click'），如果是v-model，则node.addEventListener('input'))。接着初始化模板元素，创建一个Watcher绑定这个元素节点。
 
 ```
-2.如果子节点是文本节点，即" {{ data }} ",则用正则表达式取出" {{ data }} "中的data，然后var initText = this.vm[exp]，用initText去替代其中的data。
+2.如果子节点是文本节点，即 {{ data }} ,则用正则表达式取出 {{ data }} 中的data，然后var initText = this.vm[exp]，用initText去替代其中的data。
 ```
 
 具体代码参见
@@ -243,5 +244,6 @@ self.vm[exp] = newValue;这个语句会触发mvvm中SelfValue的setter，以及�
 最后的最后就是效果图啦：
 
 ![双向绑定](http://upload-images.jianshu.io/upload_images/3185709-88ac3b89e1e30ec9.gif?imageMogr2/auto-orient/strip)
+我的博客：https://1053061407.github.io/
 相关参考链接:http://www.cnblogs.com/canfoo/p/6891868.html
 

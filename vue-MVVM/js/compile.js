@@ -21,6 +21,7 @@ Compile.prototype = {
         while (child) {
             // 将Dom元素移入fragment中
             fragment.appendChild(child);
+            console.log(child)
             child = el.firstChild
         }
         return fragment;

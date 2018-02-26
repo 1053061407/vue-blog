@@ -8,7 +8,7 @@ function Compile(el, vm) {
 Compile.prototype = {
     init: function () {
         if (this.el) {
-            this.fragment = this.nodeToFragment(this.el);
+            this.fragment = this.nodeToFragment(this.el); // 将绑定的dom元素整个添加到fragment元素
             this.compileElement(this.fragment);
             this.el.appendChild(this.fragment);
         } else {
@@ -21,7 +21,6 @@ Compile.prototype = {
         while (child) {
             // 将Dom元素移入fragment中
             fragment.appendChild(child);
-            console.log(child)
             child = el.firstChild
         }
         return fragment;
@@ -37,6 +36,7 @@ Compile.prototype = {
                 self.compile(node);
               // 如果是文本节点
             } else if (self.isTextNode(node) && reg.test(text)) {
+                console.log(node)
               //第 0 个元素是与正则表达式相匹配的文本 reg.exec(text)[0] 为 '{{data}}'
               //第 1 个元素是与 RegExpObject 的第 1 个子表达式相匹配的文本 reg.exec(text)[1]为'data'
                 self.compileText(node, reg.exec(text)[1]);
@@ -86,7 +86,7 @@ Compile.prototype = {
     compileModel: function (node, vm, exp) {
         var self = this;
         var val = this.vm[exp];
-        this.modelUpdater(node, val);
+        this.modelUpdater(node, val);  // 完成挂载，{{ }}中的值被渲染为data中的值
         new Watcher(this.vm, exp, function (value) {
             self.modelUpdater(node, value);
         });

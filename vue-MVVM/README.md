@@ -244,6 +244,7 @@ self.vm[exp] = newValue;这个语句会触发mvvm中SelfValue的setter，以及�
 最后的最后就是效果图啦：
 
 ![双向绑定](http://upload-images.jianshu.io/upload_images/3185709-88ac3b89e1e30ec9.gif?imageMogr2/auto-orient/strip)
-我的博客：https://1053061407.github.io/
-相关参考链接:http://www.cnblogs.com/canfoo/p/6891868.html
+
+相关参考链接:
+[vue-MVVM原理实现]https://github.com/canfoo/self-vue
 

@@ -293,11 +293,11 @@ newStartIdx，newEndIdx是遍历`newCh(vnode的子节点)`的索引
 
 
 用图来描述就是
-![第一轮diff](http://upload-images.jianshu.io/upload_images/3185709-40db7656684e8b14.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![第一轮diff](https://upload-images.jianshu.io/upload_images/3185709-ef7db7215a24be7f.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![第二轮diff](http://upload-images.jianshu.io/upload_images/3185709-c6c5bb6c402efcb6.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![第三轮diff](http://upload-images.jianshu.io/upload_images/3185709-bca2051872f4dbe0.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
 ![第四轮diff](http://upload-images.jianshu.io/upload_images/3185709-7d2e64727ec47bb4.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
-![第五轮diff](http://upload-images.jianshu.io/upload_images/3185709-d1207542cce45de8.png?imageMogr2/auto-orient/strip%7CimageView2/2/w/1240)
+![第五轮diff](https://user-images.githubusercontent.com/9695264/27948742-7dbc0114-632d-11e7-9ff9-b8a1a3f88eb3.jpeg)
 
 最后，由于newStartIndex>newEndIndex,所以`newCh`剩余的节点会被添加到parentElm中
 
